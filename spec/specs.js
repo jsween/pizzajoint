@@ -1,8 +1,9 @@
 describe("Pizza object", function() {
   it("will create a new pizza object", function() {
-    var testPizza = new Pizza("xl", "Pepperoni");
+    var testPizza = new Pizza("xl", "Pepperoni", 0);
     expect(testPizza.pSize).to.equal("xl");
     expect(testPizza.pType).to.equal("Pepperoni");
+    expect(testPizza.toppings).to.equal(0);
     expect(testPizza.calcPizzaSize()).to.equal(20);
     expect(testPizza.calcPizzaToppings()).to.equal(2);
     expect(testPizza.calcPizzaPrice()).to.equal(22);
@@ -11,7 +12,7 @@ describe("Pizza object", function() {
 
 describe("calcPizzaSize", function() {
   it("will return right amount for xl pizza", function() {
-    var testPizza = new Pizza("xl");
+    var testPizza = new Pizza("xl", "cheese", 0);
     expect(testPizza.calcPizzaSize()).to.equal(20);
   });
   it("will return right amount for small pizza", function() {
@@ -30,19 +31,19 @@ describe("calcPizzaSize", function() {
 
 describe("calcPizzaToppings", function() {
   it("will return right amount for pepperoni", function() {
-    var testPizza = new Pizza("xl", "Pepperoni");
+    var testPizza = new Pizza("xl", "Pepperoni", 0);
     expect(testPizza.calcPizzaToppings()).to.equal(2);
   });
   it("will return right amount for Combo", function() {
-    var testPizza = new Pizza("xl", "Combo");
+    var testPizza = new Pizza("xl", "Combo", 0);
     expect(testPizza.calcPizzaToppings()).to.equal(4);
   });
   it("will return right amount for Chicken Ranch", function() {
-    var testPizza = new Pizza("xl", "Chicken Ranch");
+    var testPizza = new Pizza("xl", "Chicken Ranch", 0);
     expect(testPizza.calcPizzaToppings()).to.equal(4);
   });
   it("will return right amount for Cheese", function() {
-    var testPizza = new Pizza("xl", "Cheese");
+    var testPizza = new Pizza("xl", "Cheese", 0);
     expect(testPizza.calcPizzaToppings()).to.equal(0);
   })
 

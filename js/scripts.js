@@ -1,6 +1,7 @@
-function Pizza(pSize, pType) {
+function Pizza(pSize, pType, toppings) {
   this.pSize = pSize;
   this.pType = pType;
+  this.toppings = toppings;
   this.pizzaPrice = null;
 }
 
