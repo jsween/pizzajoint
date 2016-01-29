@@ -9,10 +9,27 @@
     <title>Pizza Joint</title>
   </head>
   <body>
-    <div class="jumbotron">
-      <h1>Pizza Joint</h1>
-      <p>Order a Slice</p>
-    </div>
+    <div class="header"> <!-- header -->
+
+      <div class="jumbotron">
+        <h1>Pizza Joint</h1>
+        <p>Order a Slice</p>
+      </div>
+    </div> <!-- end header -->
+    <div class="container"> <!-- wrapper -->
+      <div class="row"> <!-- row -->
+        <div class="col-md-8">
+          <h2>Order Your Pizza</h2>
+          <form id="add-pizza" class="form-group"> <!-- form -->
+            <label for="new-pizza-size">Choose Your Pizza's Size</label>
+            <select class="select" name="new-pizza-size">
+              <option value="sm">Small</option>
+              <option value="md">Medium</option>
+            </select>
+          </form> <!-- end form -->
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end wrapper -->
 
   </body>
 </html>
