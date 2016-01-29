@@ -16,7 +16,7 @@ Pizza.prototype.calcPizzaSize = function () {
   return 20;
 };
 
-Pizza.prototype.calcPizzaToppings = function () {
+Pizza.prototype.calcPizzaType = function () {
   if(this.pType === "Pepperoni") {
     return 2;
   } else if(this.pType === "Combo" || this.pType === "Chicken Ranch"){
@@ -24,16 +24,20 @@ Pizza.prototype.calcPizzaToppings = function () {
   } else if(this.pType === "Cheese") {
     return 0;
   } else {
-    var toppingTotal = 0;
-    for(var i = 0; i < this.toppings.length; i++) {
-      toppingTotal += 1;
-    }
-    return toppingTotal;
+    return -1;
   };
 };
 
+Pizza.prototype.calcPizzaToppings = function () {
+  var toppingTotal = 0;
+  for(var i = 0; i < this.toppings.length; i++) {
+    toppingTotal += 1;
+  }
+  return toppingTotal;
+};
+
 Pizza.prototype.calcPizzaPrice = function () {
-  return this.pizzaPrice = this.calcPizzaSize() + this.calcPizzaToppings();
+  return this.pizzaPrice = this.calcPizzaSize() + this.calcPizzaType() + this.calcPizzaToppings();
 };
 
 Pizza.prototype.fullNamePizza = function () {
@@ -56,16 +60,9 @@ $(function() {
 
     var inputtedToppingsArray = $.makeArray(inputtedToppings);
 
-
-    console.log("Inputted/view toppings are:" + inputtedToppings + ", " + inputtedToppingsArray);
     var newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppingsArray);
-    console.log("Your size/type/toppings are: " + inputtedSize + " " + inputtedType + " " + inputtedToppingsArray);
-
-    console.log("Your new pizza is a: " + newPizza.fullNamePizza());
-
 
   total += newPizza.calcPizzaPrice();
-  console.log("total price is $" + newPizza.calcPizzaPrice());
   $("#order-total").text("$ " + total);
   $("#order-pizzas").append(newPizza.fullNamePizza() + " $" + newPizza.calcPizzaPrice() + "<br>");
   });
