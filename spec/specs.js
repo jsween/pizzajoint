@@ -8,6 +8,15 @@ describe("Pizza object", function() {
     expect(testPizza.calcPizzaToppings()).to.equal(2);
     expect(testPizza.calcPizzaPrice()).to.equal(22);
   });
+  it("will create a new pizza object", function() {
+    var testPizza = new Pizza("md", "Pepperoni", 0);
+    expect(testPizza.pSize).to.equal("md");
+    expect(testPizza.pType).to.equal("Pepperoni");
+    expect(testPizza.toppings).to.equal(0);
+    expect(testPizza.calcPizzaSize()).to.equal(20);
+    expect(testPizza.calcPizzaToppings()).to.equal(2);
+    expect(testPizza.calcPizzaPrice()).to.equal(22);
+  });
 });
 
 describe("calcPizzaSize", function() {

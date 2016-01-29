@@ -12,7 +12,7 @@
     <div class="header"> <!-- header -->
       <div class="jumbotron center">
         <h1>Little Shop of Pizzas</h1>
-        <p>Order a Slice</p>
+        <p>Order a Pizza</p>
       </div>
     </div> <!-- end header -->
     <div class="container"> <!-- wrapper -->
@@ -31,11 +31,18 @@
             </div>
             <div class="form-control">
               <label for="new-pizza-toppings">Choose Your Pizza</label>
-                <input type="checkbox" class="new-pizza-toppings" value="Pepperoni">Pepperoni</select>
-                <input type="checkbox" class="new-pizza-toppings" value="Pineapple">Pineapple</select>
+              <!-- <input class="radio new-pizza-type" > -->
+              <select class="" name="">
+                <option value="Cheese" checked>Cheese</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Combo">Combo</option>
+                <option value="Chicken Ranch">Chicken Ranch</option>
+                <option value="Custom">Custom</option>
+              </select>
+              <!-- </input> -->
             </div>
             <div id="add-new-pizza">
-              <button type="submit" class="btn">Add To Cart</button>
+              <button type="submit" class="btn btn-primary">Add To Cart</button>
             </div>
           </form> <!-- end form -->
         </div>
