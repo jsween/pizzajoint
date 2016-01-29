@@ -10,11 +10,11 @@ Pizza.prototype.fullNewPizza = function () {
 
 function PizzaToppings(pizzaToppings) {
   this.pizzaToppings = pizzaToppings;
+  this.toppingsPrice = null;
 }
 
 PizzaToppings.prototype.getPizzaToppings = function (pizzaToppings) {
-  // debugger;
-  return this.pizzaToppings;
+  return this.pizzaToppings.join(" ");;
 };
 
 Pizza.prototype.calcPizzaSize = function () {
@@ -28,11 +28,12 @@ Pizza.prototype.calcPizzaSize = function () {
     return 20;
 };
 
-Pizza.prototype.calcPizzaToppings = function () {
+PizzaToppings.prototype.calcPizzaToppings = function () {
+  debugger;
   for(var i = 0; i < this.pizzaToppings.length; i++) {
-    this.pizzaPrice += 1;
+    this.toppingsPrice += 1;
   }
-  return this.pizzaPrice;
+  return this.toppingsPrice;
 };
 
 
