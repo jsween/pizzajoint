@@ -1,28 +1,12 @@
 describe("Pizza object", function() {
   it("will create a new pizza object", function() {
-    var testPizza = new Pizza("sm");
-    expect(testPizza.pizzaSize).to.equal("sm");
+    var testPizza = new Pizza("sm", ["pepperoni"]);
+    expect(testPizza.pSize).to.equal("sm");
+    expect(testPizza.toppings).to.eql(["pepperoni"])
     expect(testPizza.pizzaPrice).to.equal(null);
   });
-
 });
 
-describe("Toppings object", function() {
-  it("will create an array of toppings", function() {
-    var testToppings = new PizzaToppings(["pepperoni"]);
-    expect(testToppings.getPizzaToppings()).to.equal("pepperoni");
-  });
-  it("will create an array of toppings", function() {
-    var testToppings = new PizzaToppings(["pepperoni", "ham"]);
-    expect(testToppings.getPizzaToppings()).to.equal("pepperoni ham");
-  });
-
-  it("will create an array of toppings", function() {
-    var testToppings = new PizzaToppings(["pepperoni", "ham", "black olives"]);
-    expect(testToppings.getPizzaToppings()).to.equal("pepperoni ham black olives");
-  });
-
-});
 
 describe("calcPizzaSize", function() {
   it("will return right amount for xl pizza", function() {
@@ -44,13 +28,20 @@ describe("calcPizzaSize", function() {
 });
 
 describe("calcPizzaToppings", function() {
-  it("will return right amount for selected pizza", function() {
-    var testPizza = new PizzaToppings(["pepperoni"]);
+  it("will return right amount for 1 topping", function() {
+    var testPizza = new Pizza("xl", ["pepperoni"]);
     expect(testPizza.calcPizzaToppings()).to.equal(1);
   });
 
-  it("will return right amount for selected pizza", function() {
-    var testPizza = new PizzaToppings(["pepperoni", "black olives"]);
+  it("will return right amount for 2 toppings", function() {
+    var testPizza = new Pizza("xl", ["pepperoni", "black olives"]);
     expect(testPizza.calcPizzaToppings()).to.equal(2);
+  });
+});
+
+describe("fullNewPizza", function() {
+  it("will return the summary for an ordered pizza", function() {
+    var testPizza = new Pizza("lg", ["pepperoni"]);
+    expect(testPizza.fullNamePizza()).to.equal("lg pepperoni pizza");
   });
 });
