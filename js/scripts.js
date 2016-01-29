@@ -6,11 +6,11 @@ function Pizza(pSize, pType, toppings) {
 }
 
 Pizza.prototype.calcPizzaSize = function () {
-  if(this.pSize === "sm") {
+  if(this.pSize === "Small") {
     return 8;
-  } else if(this.pSize === "md") {
+  } else if(this.pSize === "Medium") {
     return 12;
-  } else if(this.pSize === "lg") {
+  } else if(this.pSize === "Large") {
     return 15;
   } else
   return 20;
@@ -34,10 +34,10 @@ Pizza.prototype.calcPizzaToppings = function () {
 Pizza.prototype.calcPizzaPrice = function () {
   return this.pizzaPrice = this.calcPizzaSize() + this.calcPizzaToppings();
 };
-//
-// Pizza.prototype.fullNamePizza = function () {
-//   return this.pSize + " " + this.toppings.join(" ") + " pizza";
-// };
+
+Pizza.prototype.fullNamePizza = function () {
+  return this.pSize + " " + this.pType + " Pizza";
+};
 
 
 
