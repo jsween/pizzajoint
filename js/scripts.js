@@ -14,3 +14,11 @@ Pizza.prototype.calcPizzaSize = function () {
   } else
     return 20;
 };
+
+Pizza.prototype.calcPizzaToppings = function () {
+  // debugger;
+  for(var i = 0; i < this.pizzaToppings.length; i++) {
+    this.pizzaPrice += 1;
+  }
+  return this.pizzaPrice;
+};

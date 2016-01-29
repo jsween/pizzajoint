@@ -8,12 +8,24 @@ describe("Pizza", function() {
 
 });
 
-describe("getPizzaSize", function() {
+describe("calcPizzaSize", function() {
   it("will return right amount for selected pizza", function() {
     var testPizza = new Pizza("xl", "pepperoni");
     // expect(testPizza.calcPizzaSize()).to.equal(8);
     // expect(testPizza.calcPizzaSize()).to.equal(12);
     // expect(testPizza.calcPizzaSize()).to.equal(15);
     expect(testPizza.calcPizzaSize()).to.equal(20);
+  });
+});
+
+describe("calcPizzaToppings", function() {
+  it("will return right amount for selected pizza", function() {
+    var testPizza = new Pizza("xl", ["pepperoni"]);
+    expect(testPizza.calcPizzaToppings()).to.equal(1);
+  });
+
+  it("will return right amount for selected pizza", function() {
+    var testPizza = new Pizza("xl", ["pepperoni", "black olives"]);
+    expect(testPizza.calcPizzaToppings()).to.equal(2);
   });
 });
