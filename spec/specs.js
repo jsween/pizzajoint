@@ -1,12 +1,13 @@
 describe("Pizza object", function() {
   it("will create a new pizza object", function() {
-    var testPizza = new Pizza("sm", ["pepperoni"]);
-    expect(testPizza.pSize).to.equal("sm");
-    expect(testPizza.toppings).to.eql(["pepperoni"])
-    expect(testPizza.pizzaPrice).to.equal(null);
+    var testPizza = new Pizza("xl", "Pepperoni");
+    expect(testPizza.pSize).to.equal("xl");
+    expect(testPizza.pType).to.equal("Pepperoni");
+    expect(testPizza.calcPizzaSize()).to.equal(20);
+    expect(testPizza.calcPizzaToppings()).to.equal(2);
+    expect(testPizza.calcPizzaPrice()).to.equal(22);
   });
 });
-
 
 describe("calcPizzaSize", function() {
   it("will return right amount for xl pizza", function() {
@@ -28,20 +29,28 @@ describe("calcPizzaSize", function() {
 });
 
 describe("calcPizzaToppings", function() {
-  it("will return right amount for 1 topping", function() {
-    var testPizza = new Pizza("xl", ["pepperoni"]);
-    expect(testPizza.calcPizzaToppings()).to.equal(1);
-  });
-
-  it("will return right amount for 2 toppings", function() {
-    var testPizza = new Pizza("xl", ["pepperoni", "black olives"]);
+  it("will return right amount for pepperoni", function() {
+    var testPizza = new Pizza("xl", "Pepperoni");
     expect(testPizza.calcPizzaToppings()).to.equal(2);
   });
-});
-
-describe("fullNewPizza", function() {
-  it("will return the summary for an ordered pizza", function() {
-    var testPizza = new Pizza("lg", ["pepperoni"]);
-    expect(testPizza.fullNamePizza()).to.equal("lg pepperoni pizza");
+  it("will return right amount for Combo", function() {
+    var testPizza = new Pizza("xl", "Combo");
+    expect(testPizza.calcPizzaToppings()).to.equal(4);
   });
+  it("will return right amount for Chicken Ranch", function() {
+    var testPizza = new Pizza("xl", "Chicken Ranch");
+    expect(testPizza.calcPizzaToppings()).to.equal(4);
+  });
+  it("will return right amount for Cheese", function() {
+    var testPizza = new Pizza("xl", "Cheese");
+    expect(testPizza.calcPizzaToppings()).to.equal(0);
+  })
+
 });
+//
+// describe("fullNewPizza", function() {
+//   it("will return the summary for an ordered pizza", function() {
+//     var testPizza = new Pizza("lg", ["pepperoni"]);
+//     expect(testPizza.fullNamePizza()).to.equal("lg pepperoni pizza");
+//   });
+// });
