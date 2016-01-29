@@ -16,9 +16,26 @@ Pizza.prototype.calcPizzaSize = function () {
 };
 
 Pizza.prototype.calcPizzaToppings = function () {
-  // debugger;
   for(var i = 0; i < this.pizzaToppings.length; i++) {
     this.pizzaPrice += 1;
   }
   return this.pizzaPrice;
 };
+
+
+$(function() {
+  $("form#add-pizza").submit(function(event) {
+    event.preventDefault();
+
+    var inputtedPizzaSize = $(this).find("input.new-size").val();
+    var inputtedPizzaToppings = $(this).find("input.new-toppings").val();
+    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings);
+
+
+    console.log("Your new pizza is: " + newPizza);
+  });
+
+
+
+
+});
