@@ -1,7 +1,6 @@
 function Pizza(pizzaSize) {
   this.pizzaSize = pizzaSize;
   this.pizzaToppings = [];
-  console.log("hi from pizza object: Your toppings are " + this.pizzaToppings);
   this.pizzaPrice = null;
 }
 
@@ -10,11 +9,12 @@ Pizza.prototype.fullNewPizza = function () {
 };
 
 function PizzaToppings(pizzaToppings) {
-  this.pizzaToppings = [];
+  this.pizzaToppings = pizzaToppings;
 }
 
 PizzaToppings.prototype.getPizzaToppings = function (pizzaToppings) {
-  return this.PizzaToppings = PizzaToppings;
+  // debugger;
+  return this.pizzaToppings;
 };
 
 Pizza.prototype.calcPizzaSize = function () {
