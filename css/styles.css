@@ -1,3 +1,19 @@
 .center {
   text-align: center;
 }
+
+.wrapper {
+  min-height: 700px;
+}
+
+.jumbotron {
+  background-color: #262216;
+  color: #97743a;
+}
+
+.menu {
+  height: 350px;
+  width: 150px;
+  border: 2px solid black;
+  display: inline-block;
+}

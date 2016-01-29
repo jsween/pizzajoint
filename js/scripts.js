@@ -41,21 +41,22 @@ Pizza.prototype.fullNamePizza = function () {
 
 
 
-// $(function() {
-//
-//   $("form#add-pizza").submit(function(event) {
-//     event.preventDefault();
-//
-    // var inputtedSize = "small"; //$(this).find("input.new-pizza-size").val();
-    // var inputtedToppings = $("input:checked.new-pizza-toppings").val();
-    // var newPizza = new Pizza(inputtedSize, inputtedToppings);
-    // console.log("Your size/toppings are: " + inputtedSize + " " + inputtedToppings);
-//
-//     // console.log("Your new pizza is a: " + newPizza.size + " " + newPizza.toppings);
-//
-//
-//   // // var total = newPizza.sizePrice + newToppings.toppingsPrice;
-//   // console.log("total price is " + newPizza.sizePrice + inputtedToppings.toppingsPrice);
-//   });
-//
-// });
+$(function() {
+
+  $("form#add-pizza").submit(function(event) {
+    event.preventDefault();
+
+    var inputtedSize = $(this).find("select.new-pizza-size").val();
+    var inputtedType = $(this).find("select.new-pizza-type").val();
+    var inputtedToppings = 0;
+    var newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppings);
+    console.log("Your size/type/toppings are: " + inputtedSize + " " + inputtedType + " " + inputtedToppings);
+
+    console.log("Your new pizza is a: " + newPizza.fullNamePizza());
+
+
+  var total = newPizza.pizzaPrice;
+  console.log("total price is $" + newPizza.calcPizzaPrice());
+  });
+
+});
