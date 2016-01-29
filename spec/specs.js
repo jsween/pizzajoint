@@ -61,7 +61,7 @@ describe("calcPizzaToppings", function() {
 describe("fullNewPizza", function() {
   it("will return the summary for an ordered pizza", function() {
     var testPizza = new Pizza("Large", "pepperoni", 0);
-    expect(testPizza.fullNamePizza()).to.equal("Large pepperoni pizza");
+    expect(testPizza.fullNamePizza()).to.equal("Large pepperoni Pizza");
   });
   it("will return the summary for an ordered pizza", function() {
     var testPizza = new Pizza("Large", "Chicken Bacon Ranch", 0);

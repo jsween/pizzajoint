@@ -1,3 +1,7 @@
+#menu {
+  width: 100%;
+}
+
 .center {
   text-align: center;
 }
@@ -12,8 +16,13 @@
 }
 
 .menu {
-  height: 350px;
+  height: 250px;
   width: 150px;
-  border: 2px solid black;
+  border: 3px solid #49412c;
   display: inline-block;
+}
+
+.menu img {
+  height: 140px;
+  width: 140px;
 }

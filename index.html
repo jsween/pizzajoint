@@ -15,45 +15,71 @@
         <p>Order a Pizza</p>
       </div>
     </div> <!-- end header -->
-    <div class="container wrapper"> <!-- wrapper -->
-      <div id="menu" class="center">
-        <span class="menu"></span>
-        <span class="menu"></span>
-        <span class="menu"></span>
-        <span class="menu"></span>
-        <span class="menu"></span>
-      </div>
-      <div class="row"> <!-- row -->
-        <div class="col-md-8">
-          <h2>Order Your Pizza</h2>
-          <form id="add-pizza" class="form-group"> <!-- add a pizza to cart form -->
-            <div class="form-control">
-              <label for="new-pizza-size">Choose Your Pizza's Size</label>
-              <select class="select new-pizza-size">
-                <option  class="new-pizza-size" value="Small">Small</option>
-                <option  class="new-pizza-size" value="Medium">Medium</option>
-                <option  class="new-pizza-size" value="Large">Large</option>
-                <option  class="new-pizza-size" value="Extra Large">Extra Large</option>
-              </select>
-            </div>
-            <div class="form-control">
-              <label for="new-pizza-type">Choose Your Pizza</label>
-              <!-- <input class="radio new-pizza-type" > -->
-              <select class="new-pizza-type" name="">
-                <option value="Cheese" checked>Cheese</option>
-                <option value="Pepperoni">Pepperoni</option>
-                <option value="Combo">Combo</option>
-                <option value="Chicken Ranch">Chicken Ranch</option>
-                <option value="Custom">Custom</option>
-              </select>
-              <!-- </input> -->
-            </div>
-            <div id="add-new-pizza">
-              <button type="submit" class="btn btn-primary">Add To Cart</button>
-            </div>
-          </form> <!-- end form -->
+    <div class="wrapper"> <!-- wrapper -->
+      <div class="">
+        <div id="menu" class="center">
+          <span class="menu center"><img src="img/pepza.jpg" alt="Pepperoni Pizza" />
+            <p><strong>Pepperoni Pizza</strong></p>
+              <p>Pepperoni</p>
+              <p>Cheese</p>
+          </span>
+          <span class="menu center"><img src="img/chzza.jpg" alt="Cheese Pizza" />
+            <p><strong>Cheese Pizza</strong></p>
+              <p>Cheese</p>
+              <p>4 Types</p>
+          </span>
+          <span class="menu center"><img src="img/comboza.jpg" alt="Combo Pizza" />
+            <p><strong>Combo Pizza</strong></p>
+              <p>Pepperoni</p>
+              <p>Sausage</p>
+          </span>
+          <span class="menu center"><img src="img/cbr.jpg" alt="Chicken Bacon Ranch Pizza" />
+            <p><strong>CBR Pizza</strong></p>
+              <p>Chicken</p>
+              <p>Bacon</p>
+          </span>
+          <span class="menu center"><img src="img/byoza.jpg" alt="Build Your Own" />
+            <p><strong>Custom Pizza</strong></p>
+              <p>You Choose!</p>
+              <p>Whatever You Want!</p>
+          </span>
         </div>
-      </div> <!-- end row -->
+        <div class="row"> <!-- row -->
+          <div class="col-md-8">
+            <h2>Order Your Pizza</h2>
+            <form id="add-pizza" class="form-group"> <!-- add a pizza to cart form -->
+              <div class="form-control">
+                <label for="new-pizza-size">Choose Your Pizza's Size</label>
+                <select class="select new-pizza-size">
+                  <option  class="new-pizza-size" value="Small">Small</option>
+                  <option  class="new-pizza-size" value="Medium">Medium</option>
+                  <option  class="new-pizza-size" value="Large">Large</option>
+                  <option  class="new-pizza-size" value="Extra Large">Extra Large</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label for="new-pizza-type">Choose Your Pizza</label>
+                <!-- <input class="radio new-pizza-type" > -->
+                <select class="new-pizza-type" name="">
+                  <option value="Cheese" checked>Cheese</option>
+                  <option value="Pepperoni">Pepperoni</option>
+                  <option value="Combo">Combo</option>
+                  <option value="Chicken Ranch">Chicken Ranch</option>
+                  <option value="Custom">Custom</option>
+                </select>
+                <!-- </input> -->
+              </div>
+              <div id="add-new-pizza">
+                <button type="submit" class="btn btn-primary">Add To Cart</button>
+              </div>
+            </form> <!-- end form -->
+          </div>
+          <div class="col-md-4">
+            <h3>Order Summary</h3>
+            <p>Total:<span id="order-total"></span></p>
+          </div>
+        </div> <!-- end row -->
+      </div>
     </div> <!-- end wrapper -->
     <div class="footer center"> <!-- footer -->
       <p>
