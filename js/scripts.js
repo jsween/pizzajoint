@@ -23,11 +23,11 @@ Pizza.prototype.calcPizzaToppings = function () {
     return 4;
   } else if(this.pType === "Cheese") {
     return 0;
-  // } else {
-  //   for(var i = 0; i < this.toppings.length; i++) {
-  //     this.pizzaPrice += 1;
-  //   }
-  //   return toppingCount;
+  } else {
+    // for(var i = 0; i < this.toppings.length; i++) {
+    //   this.pizzaPrice += 1;
+    // }
+    return 0;
   };
 };
 
@@ -42,6 +42,7 @@ Pizza.prototype.fullNamePizza = function () {
 
 
 $(function() {
+  var total = 0;
 
   $("form#add-pizza").submit(function(event) {
     event.preventDefault();
@@ -55,8 +56,10 @@ $(function() {
     console.log("Your new pizza is a: " + newPizza.fullNamePizza());
 
 
-  var total = newPizza.pizzaPrice;
+  total += newPizza.calcPizzaPrice();
   console.log("total price is $" + newPizza.calcPizzaPrice());
+  $("#order-total").text("$ " + total);
+  $("#order-pizzas").append(newPizza.fullNamePizza() + " $" + newPizza.calcPizzaPrice() + "<br>");
   });
 
 });
