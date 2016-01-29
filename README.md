@@ -8,7 +8,11 @@ This web application is a demonstration of constructors and prototypes using Jav
 
 ## Setup
 
-Install pizzaJoint by cloning this repository.
+To start the program, click the link below to open in browser:
+https://jsween.github.io/pizzajoint
+
+To view the code, click below:
+https://github.com/jsween/pizzajoint
 
 ## Technologies Used
 
