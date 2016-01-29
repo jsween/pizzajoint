@@ -57,22 +57,39 @@
                   <option  class="new-pizza-size" value="Extra Large">Extra Large</option>
                 </select>
               </div>
-              <div class="form-control">
+              <div class="form-control"> <!-- Choose Pizza Section -->
                 <label for="new-pizza-type">Choose Your Pizza</label>
-                <!-- <input class="radio new-pizza-type" > -->
                 <select class="new-pizza-type" name="">
                   <option value="Cheese" checked>Cheese</option>
                   <option value="Pepperoni">Pepperoni</option>
                   <option value="Combo">Combo</option>
                   <option value="Chicken Ranch">Chicken Ranch</option>
-                  <option value="Custom">Custom</option>
+                  <option id="custom" value="Custom">Custom</option>
                 </select>
-                <!-- </input> -->
-
+              </div><!-- End Choose Pizza Section -->
+              <div id="toppings" class="custom-pizza">
+                <h5>Choose Your Toppings!</h5>
+                <div class="row">
+                  <div class="col-md-2">
+                    <input type="checkbox" class="topping" value="Pepperoni">Pepperoni<br>
+                    <input type="checkbox" class="topping" value="Sausage">Sausage<br>
+                    <input type="checkbox" class="topping" value="Canadian Bacon">Canadian Bacon<br>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="checkbox" class="topping" value="Ground Beef">Ground Beef<br>
+                    <input type="checkbox" class="topping" value="Sausage">Sausage<br>
+                    <input type="checkbox" class="topping" value="Canadian Bacon">Canadian Bacon<br>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="checkbox" class="topping" value="Black Olives">Black Olives<br>
+                    <input type="checkbox" class="topping" value="Pineapple">Pineapple<br>
+                    <input type="checkbox" class="topping" value="Onions">Onions<br>
+                  </div>
+                </div>
               </div>
-              <div id="add-new-pizza">
+              <div id="add-new-pizza"> <!-- Button -->
                 <button type="submit" class="btn btn-primary">Add To Cart</button>
-              </div>
+              </div><!-- end Button -->
             </form> <!-- end form -->
           </div>
           <div class="col-md-4">

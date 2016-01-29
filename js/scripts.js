@@ -24,10 +24,11 @@ Pizza.prototype.calcPizzaToppings = function () {
   } else if(this.pType === "Cheese") {
     return 0;
   } else {
-    // for(var i = 0; i < this.toppings.length; i++) {
-    //   this.pizzaPrice += 1;
-    // }
-    return 0;
+    var toppingTotal = 0;
+    for(var i = 0; i < this.toppings.length; i++) {
+      toppingTotal += 1;
+    }
+    return toppingTotal;
   };
 };
 
@@ -49,9 +50,16 @@ $(function() {
 
     var inputtedSize = $(this).find("select.new-pizza-size").val();
     var inputtedType = $(this).find("select.new-pizza-type").val();
-    var inputtedToppings = 0;
-    var newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppings);
-    console.log("Your size/type/toppings are: " + inputtedSize + " " + inputtedType + " " + inputtedToppings);
+    var inputtedToppings = $(this).find(".topping:checked").map(function() {
+      return this.value;
+    });
+
+    var inputtedToppingsArray = $.makeArray(inputtedToppings);
+
+
+    console.log("Inputted/view toppings are:" + inputtedToppings + ", " + inputtedToppingsArray);
+    var newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppingsArray);
+    console.log("Your size/type/toppings are: " + inputtedSize + " " + inputtedType + " " + inputtedToppingsArray);
 
     console.log("Your new pizza is a: " + newPizza.fullNamePizza());
 
