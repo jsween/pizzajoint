@@ -1,8 +1,21 @@
-function Pizza(pizzaSize, pizzaToppings) {
+function Pizza(pizzaSize) {
   this.pizzaSize = pizzaSize;
-  this.pizzaToppings = pizzaToppings;
+  this.pizzaToppings = [];
+  console.log("hi from pizza object: Your toppings are " + this.pizzaToppings);
   this.pizzaPrice = null;
 }
+
+Pizza.prototype.fullNewPizza = function () {
+  return this.pizzaSize + " " + this.pizzaToppings;
+};
+
+function PizzaToppings(pizzaToppings) {
+  this.pizzaToppings = [];
+}
+
+PizzaToppings.prototype.getPizzaToppings = function (pizzaToppings) {
+  return this.PizzaToppings = PizzaToppings;
+};
 
 Pizza.prototype.calcPizzaSize = function () {
   if(this.pizzaSize === "sm") {
@@ -24,15 +37,16 @@ Pizza.prototype.calcPizzaToppings = function () {
 
 
 $(function() {
+
   $("form#add-pizza").submit(function(event) {
     event.preventDefault();
 
-    var inputtedPizzaSize = $(this).find("input.new-size").val();
-    var inputtedPizzaToppings = $(this).find("input.new-toppings").val();
-    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings);
+    var inputtedPizzaSize = $(this).find("input.new-pizza-size").val();
+    var inputtedPizzaToppings = $("input:checked.new-pizza-toppings").val();
+    var newPizza = new Pizza(inputtedPizzaSize);
+    console.log("Your size/toppings are: " + inputtedPizzaSize + " " + inputtedPizzaToppings);
 
-
-    console.log("Your new pizza is: " + newPizza);
+    console.log("Your new pizza is a: " + newPizza.pizzaSize + " " + newPizza.pizzaToppings);
   });
 
 
