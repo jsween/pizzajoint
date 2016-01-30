@@ -9,6 +9,11 @@
 #add-pizza {
   margin-left: 5px;
 }
+
+#running-total {
+  display: none;
+}
+
 .center {
   text-align: center;
 }
@@ -33,7 +38,3 @@
   height: 140px;
   width: 140px;
 }
-
-/*.custom-pizza {
-  display: none;
-}*/
