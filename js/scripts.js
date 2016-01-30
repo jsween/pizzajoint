@@ -69,6 +69,7 @@ $(function() {
     total += newPizza.calcPizzaPrice();
     $("#order-total").text("$ " + total);
     $("#order-pizzas").append(newPizza.fullNamePizza() + " $" + newPizza.calcPizzaPrice() + "<br>");
+    $('input:checkbox').removeAttr('checked');
   });
 
   /** checkout button **/
