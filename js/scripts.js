@@ -78,5 +78,6 @@ $(function() {
     } else {
       alert("Hey! Place your order so I can get this going!");
     }
+    location.reload();
   })
 });
